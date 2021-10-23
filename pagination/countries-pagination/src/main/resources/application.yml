@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    # Url de conexion a la base de datos
+    url: jdbc:mysql://localhost:3306/test_spring?useSSL=false&serverTimezone=UTC&useLegacyDateTimeCode=false
+    # usuario y password
+    user: root
+    password: 
+  jpa:
+    # mostrar sentencias sql
+    show-sql: true
+    hibernate:
+      # actualizar base de datos y crear entidades
+      ddl-auto: update
+    # para generar sql optimizados
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
