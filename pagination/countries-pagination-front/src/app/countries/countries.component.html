@@ -1,0 +1,30 @@
+<div class="container">
+  <h2 class="text-center">Countries</h2>
+  <table class="table table-dark table-borderless">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" (click)="setOrder('id')">ID</th>
+        <th scope="col" (click)="setOrder('name')">Name</th>
+        <th scope="col" (click)="setOrder('capital')">Capital</th>
+        <th scope="col"><i class="fas fa-sort" (click)="sort()" style="cursor: pointer;"></i></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let country of getCountries()" class="text-center">
+        <td>{{country.id}}</td>
+        <td>{{country.name}}</td>
+        <td>{{country.capital}}</td>
+        <td></td>
+      </tr>
+      <tr class="text-center">
+        <td><i class="fas fa-angle-double-left fa-2x" (click)="rewind()" style="cursor: pointer;"></i></td>
+        <td colspan="2">
+          <span *ngFor="let page of getTotalPages(); let i = index">
+            <a style="cursor: pointer;" (click)="setPage(i)" [ngClass]="{'text-primary': i == page }">{{i+1}}&nbsp;&nbsp;</a>
+          </span>
+        </td>
+        <td><i class="fas fa-angle-double-right fa-2x" (click)="forward()" style="cursor: pointer;"></i></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

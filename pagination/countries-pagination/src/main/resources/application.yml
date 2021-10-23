@@ -3,7 +3,7 @@ spring:
     # Url de conexion a la base de datos
     url: jdbc:mysql://localhost:3306/test_spring?useSSL=false&serverTimezone=UTC&useLegacyDateTimeCode=false
     # usuario y password
-    user: root
+    username: root
     password: 
   jpa:
     # mostrar sentencias sql
